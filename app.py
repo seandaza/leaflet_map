@@ -128,7 +128,9 @@ def index():
         'rank': 'Rank',
     }
 
-    filter_options = ''.join(f'<option value="{key}">{value}</option>' for key, value in filters.items())
+    filter_options = ''.join('<option value="{}">{}</option>'.format(key, value) for key, value in filters.items())
+
+    #filter_options = ''.join(f'<option value="{key}">{value}</option>' for key, value in filters.items())
 
     html = """
         <!DOCTYPE html>
