@@ -1,0 +1,22 @@
+{
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.py"
+    }
+  ],
+  "env": {
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONPATH": "/var/task"
+  },
+  "install": {
+    "include": ["requirements.txt"],
+    "command": "pip install -r requirements.txt"
+  }
+}
